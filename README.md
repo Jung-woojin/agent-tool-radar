@@ -30,7 +30,7 @@ Repeated tools are not promoted again unless there is a meaningful new release o
 
 ## Automated archive
 
-Scheduled ChatGPT reports are first delivered in chat, then archived here through a GitHub Issue + GitHub Actions workflow.
+Scheduled ChatGPT reports are first delivered in chat, then written directly with the connected GitHub file API. New files use `create_file`; existing files are fetched first and replaced with `update_file` using the current blob SHA. Archive Issues are not created, including on write failure.
 
 Automated archive commits use:
 
